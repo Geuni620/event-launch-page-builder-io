@@ -14,10 +14,12 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
+    "clsx": "^2.0.0",
     "eslint": "8.43.0",
     "next": "^13.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
