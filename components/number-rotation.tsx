@@ -3,8 +3,6 @@ import { cn } from '@/utils/tailwind-utils';
 export const NumberRotation = ({ number }: { number: number }) => {
   const numbers = Array.from({ length: 60 }, (_, i) => i);
 
-  console.log('number', number, numbers);
-
   const getClass = (num: number) => {
     if (number === num) return 'opacity-100 transform-none';
     if (number > num) return 'opacity-0 -translate-y-2';

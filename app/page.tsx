@@ -2,9 +2,10 @@
 
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { CountdownTimer } from '@/components/countdown-timer';
+import Cursor from '@/components/cursor';
 import { FrameworkRotation } from '@/components/framework-roration';
 import { assets } from '@/utils/asset-utils';
 import { type Framework, frameworks } from '@/utils/framework-utils';
@@ -20,6 +21,7 @@ export default function Home() {
     frameworks[0],
   );
   const [showBackground, setShowBackground] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     let currentIndex = 0;
@@ -128,6 +130,7 @@ export default function Home() {
           </p>
           <div className="mb-8">
             <button
+              ref={buttonRef}
               className={cn(
                 'round-md rounded-md px-6 py-3 text-sm font-semibold text-black transition-colors duration-200',
                 {
@@ -149,6 +152,7 @@ export default function Home() {
           <CountdownTimer currentFramework={currentFramework} />
         </div>
       </div>
+      <Cursor buttonRef={buttonRef} />
     </main>
   );
 }
